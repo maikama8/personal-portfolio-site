@@ -11,37 +11,26 @@ A modern, responsive personal portfolio website built with vanilla JavaScript, H
 - 🎨 **Dark Mode Support** - Toggle between light and dark themes with localStorage persistence
 - 📱 **Fully Responsive** - Works seamlessly on mobile, tablet, and desktop (320px - 2560px)
 - ✨ **Smooth Animations** - Scroll-triggered animations for project cards with stagger effects
-- 🎯 **Smooth Scrolling** - Custom smooth scroll implementation with easing functions
-- ♿ **Accessible** - WCAG 2.1 Level AA compliant with ARIA labels and keyboard navigation
+- ⌨️ **Keyboard Accessible** - Full keyboard navigation support with visible focus indicators
+- 🎯 **Semantic HTML** - Proper HTML5 structure for better SEO and accessibility
 - 🚀 **Performance Optimized** - Vanilla JavaScript with no framework dependencies
-- 🎭 **Three Pages** - Home, Projects, and Contact pages with persistent navigation
+- ♿ **WCAG Compliant** - Meets accessibility standards with proper contrast ratios and ARIA labels
+
+## Pages
+
+- **Home** - Introduction and hero section
+- **Projects** - Showcase of projects with animated cards
+- **Contact** - Contact information and social media links
 
 ## Technologies Used
 
-- HTML5 (Semantic markup)
-- Tailwind CSS (Utility-first CSS framework)
+- HTML5
+- Tailwind CSS (via CDN)
 - Vanilla JavaScript (ES6+)
 - Modern Browser APIs:
   - LocalStorage (theme persistence)
   - IntersectionObserver (scroll animations)
   - requestAnimationFrame (smooth scrolling)
-
-## Project Structure
-
-```
-portfolio-site/
-├── index.html              # Home page
-├── projects.html           # Projects showcase
-├── contact.html            # Contact information
-├── css/
-│   └── styles.css          # Custom CSS for animations
-├── js/
-│   ├── theme.js            # Theme management module
-│   ├── navigation.js       # Navigation state module
-│   ├── scroll.js           # Smooth scrolling module
-│   └── animations.js       # Animation controller module
-└── package.json            # Project metadata
-```
 
 ## Getting Started
 
@@ -54,7 +43,7 @@ portfolio-site/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/maikama8/personal-portfolio-site.git
+git clone https://github.com/yourusername/personal-portfolio-site.git
 cd personal-portfolio-site
 ```
 
@@ -80,39 +69,51 @@ php -S localhost:8000
 http://localhost:8000
 ```
 
-## Features Overview
+## Project Structure
 
-### Dark Mode
-- Click the sun/moon icon in the navigation to toggle themes
-- Theme preference is saved to localStorage
-- Automatically applies saved theme on page load
-- No flash of unstyled content
+```
+personal-portfolio-site/
+├── index.html              # Home page
+├── projects.html           # Projects page
+├── contact.html            # Contact page
+├── css/
+│   └── styles.css          # Custom CSS for animations
+├── js/
+│   ├── theme.js            # Theme management module
+│   ├── navigation.js       # Navigation module
+│   ├── scroll.js           # Smooth scrolling module
+│   └── animations.js       # Animation controller module
+├── package.json            # Project metadata
+└── README.md               # This file
+```
 
-### Responsive Navigation
-- Desktop menu for screens ≥768px
-- Mobile hamburger menu for screens <768px
-- Active page indication
-- Keyboard accessible
+## Features in Detail
 
-### Smooth Scrolling
-- Custom smooth scroll implementation
-- 800ms animation duration with easing
-- Cancels on manual scroll
-- Works with anchor links
+### Theme Management
+- Automatic theme detection and application
+- Persistent theme preference across page loads
+- Smooth transitions between light and dark modes
+- Fallback for browsers without localStorage support
 
-### Project Cards
-- Animated entrance when scrolling into view
-- Staggered animations (100ms delay)
-- Hover scale effect
-- Responsive grid layout (1/2/3 columns)
+### Responsive Design
+- Mobile-first approach
+- Breakpoints: 320px, 768px, 1024px, 2560px
+- Mobile menu for small screens
+- Desktop navigation for larger screens
+
+### Animations
+- Scroll-triggered entrance animations for project cards
+- Staggered animation delays (100ms between cards)
+- Hover effects with scale transforms
+- Smooth scrolling with easing functions
 
 ### Accessibility
-- Semantic HTML throughout
+- Semantic HTML5 elements
 - ARIA labels on interactive elements
-- Visible focus indicators
-- Skip to main content link
+- Skip to main content links
 - Keyboard navigation support
-- Color contrast ratio ≥4.5:1
+- Focus indicators on all interactive elements
+- Color contrast ratio ≥ 4.5:1
 
 ## Browser Support
 
@@ -123,18 +124,32 @@ http://localhost:8000
 
 ## Customization
 
-### Update Personal Information
+### Update Project Information
 
-1. **Author Name**: Edit `package.json` and HTML meta tags
-2. **Contact Info**: Update email and social links in `contact.html`
-3. **Projects**: Modify the `projects` array in `projects.html`
-4. **Content**: Edit text in HTML files
+Edit the `projects` array in `projects.html`:
 
-### Modify Colors
+```javascript
+const projects = [
+  {
+    id: 1,
+    title: 'Your Project',
+    description: 'Project description',
+    technologies: ['Tech1', 'Tech2'],
+    liveUrl: 'https://example.com',
+    repoUrl: 'https://github.com/username/repo'
+  }
+];
+```
 
-The site uses Tailwind CSS. To change colors, update the class names in HTML files:
-- Primary: `blue-600`, `blue-700`, etc.
-- Dark mode: `dark:bg-gray-900`, `dark:text-gray-100`, etc.
+### Update Contact Information
+
+Edit the contact details in `contact.html`:
+- Email address
+- Social media links (GitHub, LinkedIn, Twitter)
+
+### Customize Colors
+
+The site uses Tailwind CSS. Modify the color classes in the HTML files or add custom styles in `css/styles.css`.
 
 ## License
 
@@ -144,8 +159,8 @@ MIT License - feel free to use this project for your own portfolio!
 
 - Built with [Tailwind CSS](https://tailwindcss.com/)
 - Icons from Tailwind's Heroicons
-- Follows WCAG 2.1 accessibility guidelines
+- Designed with accessibility and performance in mind
 
 ---
 
-**Made with ❤️ by Abdulrasheed**
+**© 2024 Abdulrasheed. All rights reserved.**
