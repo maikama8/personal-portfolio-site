@@ -1,0 +1,11 @@
+{
+  "name": "personal-portfolio-site",
+  "version": "1.0.0",
+  "description": "Personal portfolio website with accessibility features",
+  "scripts": {
+    "test": "node tests/accessibility/contrast.test.js"
+  },
+  "keywords": ["portfolio", "accessibility", "wcag"],
+  "author": "Abdulrasheed",
+  "license": "MIT"
+}

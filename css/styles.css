@@ -1,0 +1,57 @@
+/* Custom styles for animations and utilities */
+
+/* Initial state for project cards (before animation) */
+.opacity-0 {
+  opacity: 0;
+}
+
+.translate-y-5 {
+  transform: translateY(20px);
+}
+
+/* Animated state for project cards (after entering viewport) */
+.opacity-100 {
+  opacity: 1;
+}
+
+.translate-y-0 {
+  transform: translateY(0);
+}
+
+/* Animation classes for project cards */
+.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Utility classes */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.duration-400 {
+  transition-duration: 400ms;
+}
+
+.duration-200 {
+  transition-duration: 200ms;
+}
+
+/* Hover scale effect for project cards */
+.hover\:scale-102:hover {
+  transform: scale(1.02);
+}
+
+/* Active navigation link styles */
+.nav-link.active {
+  color: #2563eb; /* blue-600 */
+  font-weight: 600;
+  border-bottom: 2px solid #2563eb;
+  padding-bottom: 2px;
+}
+
+.dark .nav-link.active {
+  color: #60a5fa; /* blue-400 */
+  border-bottom-color: #60a5fa;
+}

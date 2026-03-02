@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio showcasing projects and contact information">
+  <meta name="author" content="Abdulrasheed">
+  <title>Home - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <script>
+    // Apply theme immediately to prevent flash of unstyled content
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {
+        // localStorage unavailable, default to light theme
+      }
+    })();
+  </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+  
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">
+    Skip to main content
+  </a>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="bg-white dark:bg-gray-800 shadow-md">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <!-- Logo/Name -->
+          <div class="text-xl font-bold text-gray-900 dark:text-white">
+            Portfolio
+          </div>
+          
+          <!-- Desktop Navigation -->
+          <ul class="hidden md:flex space-x-6">
+            <li><a href="index.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded px-2 py-1">Home</a></li>
+            <li><a href="projects.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded px-2 py-1">Projects</a></li>
+            <li><a href="contact.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded px-2 py-1">Contact</a></li>
+          </ul>
+          
+          <div class="flex items-center gap-4">
+            <!-- Dark Mode Toggle -->
+            <button id="theme-toggle" aria-label="Toggle dark mode" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">
+              <svg class="w-6 h-6 hidden dark:block" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+              </svg>
+              <svg class="w-6 h-6 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+            </button>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900" aria-label="Toggle mobile menu" aria-expanded="false">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <ul id="mobile-menu" class="hidden md:hidden pb-4 space-y-2">
+          <li><a href="index.html" class="block nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 py-2 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded px-2">Home</a></li>
+          <li><a href="projects.html" class="block nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 py-2 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded px-2">Projects</a></li>
+          <li><a href="contact.html" class="block nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 py-2 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded px-2">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section id="hero" class="container mx-auto px-4 py-16 md:py-24">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          Welcome to My Portfolio
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8">
+          I'm a developer passionate about creating beautiful and functional web experiences. 
+          Explore my projects and get in touch to collaborate.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="projects.html" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">
+            View Projects
+          </a>
+          <a href="contact.html" class="px-6 py-3 border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">
+            Get in Touch
+          </a>
+          <a href="#about" class="px-6 py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 smooth-scroll">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container mx-auto px-4 py-16 bg-gray-50 dark:bg-gray-800">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">About Me</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-4">
+          I'm a passionate web developer with expertise in modern web technologies. 
+          I love building responsive, accessible, and performant web applications that provide 
+          excellent user experiences.
+        </p>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+          My focus is on creating clean, maintainable code and staying up-to-date with the latest 
+          web development trends and best practices.
+        </p>
+        <div class="text-center">
+          <a href="#hero" class="inline-block px-6 py-3 text-blue-600 dark:text-blue-400 hover:underline smooth-scroll focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 rounded">
+            Back to Top
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 dark:bg-gray-800 mt-16">
+    <div class="container mx-auto px-4 py-6 text-center text-gray-600 dark:text-gray-400">
+      <p>&copy; 2024 Abdulrasheed. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/scroll.js"></script>
+  <script>
+    // Initialize theme and navigation on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize theme before page render to prevent flash
+      ThemeManager.init();
+      
+      // Add event listener to theme toggle button
+      const themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          ThemeManager.toggleTheme();
+        });
+      }
+
+      // Initialize navigation
+      NavigationManager.setActiveLink();
+      NavigationManager.initMobileMenu();
+
+      // Initialize smooth scrolling for anchor links
+      const anchorLinks = document.querySelectorAll('a[href^="#"]');
+      anchorLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href');
+          
+          // Skip if it's just "#" or empty
+          if (!href || href === '#') {
+            return;
+          }
+          
+          e.preventDefault();
+          
+          const targetId = href.substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            const targetY = targetElement.offsetTop;
+            ScrollHandler.smoothScrollTo(targetY, 800);
+          } else {
+            console.warn(`Scroll target not found: ${href}`);
+          }
+        });
+      });
+
+      // Set up manual scroll cancellation
+      let isManualScroll = false;
+      let scrollTimeout = null;
+
+      window.addEventListener('wheel', () => {
+        if (ScrollHandler.isScrolling) {
+          ScrollHandler.cancelScroll();
+        }
+      }, { passive: true });
+
+      window.addEventListener('touchmove', () => {
+        if (ScrollHandler.isScrolling) {
+          ScrollHandler.cancelScroll();
+        }
+      }, { passive: true });
+
+      window.addEventListener('keydown', (e) => {
+        // Cancel scroll on arrow keys, page up/down, space, home, end
+        const scrollKeys = ['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Space', 'Home', 'End'];
+        if (scrollKeys.includes(e.code) && ScrollHandler.isScrolling) {
+          ScrollHandler.cancelScroll();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

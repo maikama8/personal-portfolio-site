@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View my portfolio projects and work">
+  <meta name="author" content="Abdulrasheed">
+  <title>Projects - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <script>
+    // Apply theme immediately to prevent flash of unstyled content
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {
+        // localStorage unavailable, default to light theme
+      }
+    })();
+  </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+  
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">
+    Skip to main content
+  </a>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="bg-white dark:bg-gray-800 shadow-md">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <!-- Logo/Name -->
+          <div class="text-xl font-bold text-gray-900 dark:text-white">
+            Portfolio
+          </div>
+          
+          <!-- Desktop Navigation -->
+          <ul class="hidden md:flex space-x-6">
+            <li><a href="index.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded px-2 py-1">Home</a></li>
+            <li><a href="projects.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded px-2 py-1">Projects</a></li>
+            <li><a href="contact.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded px-2 py-1">Contact</a></li>
+          </ul>
+          
+          <div class="flex items-center gap-4">
+            <!-- Dark Mode Toggle -->
+            <button id="theme-toggle" aria-label="Toggle dark mode" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">
+              <svg class="w-6 h-6 hidden dark:block" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+              </svg>
+              <svg class="w-6 h-6 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+            </button>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900" aria-label="Toggle mobile menu" aria-expanded="false">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <ul id="mobile-menu" class="hidden md:hidden pb-4 space-y-2">
+          <li><a href="index.html" class="block nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 py-2 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded px-2">Home</a></li>
+          <li><a href="projects.html" class="block nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 py-2 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded px-2">Projects</a></li>
+          <li><a href="contact.html" class="block nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 py-2 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded px-2">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Projects Section -->
+    <section id="projects" class="container mx-auto px-4 py-16">
+      <h1 class="text-4xl md:text-5xl font-bold text-center mb-12">
+        My Projects
+      </h1>
+      
+      <!-- Project Cards Grid Container -->
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project cards will be dynamically added here -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 dark:bg-gray-800 mt-16">
+    <div class="container mx-auto px-4 py-6 text-center text-gray-600 dark:text-gray-400">
+      <p>&copy; 2024 Abdulrasheed. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/animations.js"></script>
+  <script>
+    // Project data
+    const projects = [
+      {
+        id: 1,
+        title: 'E-Commerce Platform',
+        description: 'A full-stack e-commerce application with shopping cart, payment integration, and admin dashboard.',
+        technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+        liveUrl: 'https://example.com/ecommerce',
+        repoUrl: 'https://github.com/example/ecommerce'
+      },
+      {
+        id: 2,
+        title: 'Task Management App',
+        description: 'A collaborative task management tool with real-time updates and team collaboration features.',
+        technologies: ['Vue.js', 'Firebase', 'Tailwind CSS'],
+        liveUrl: 'https://example.com/taskapp'
+      },
+      {
+        id: 3,
+        title: 'Weather Dashboard',
+        description: 'A responsive weather application that displays current conditions and forecasts using external APIs.',
+        technologies: ['JavaScript', 'OpenWeather API', 'Chart.js'],
+        repoUrl: 'https://github.com/example/weather'
+      },
+      {
+        id: 4,
+        title: 'Portfolio Generator',
+        description: 'A tool that helps developers create beautiful portfolio websites with customizable themes.',
+        technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+        liveUrl: 'https://example.com/portfolio-gen',
+        repoUrl: 'https://github.com/example/portfolio-gen'
+      }
+    ];
+
+    // Render project cards
+    function renderProjects() {
+      const projectsGrid = document.getElementById('projects-grid');
+      if (!projectsGrid) return;
+
+      projectsGrid.innerHTML = projects.map(project => `
+        <div class="project-card opacity-0 translate-y-5 transition-all duration-400">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:scale-102 transition-transform duration-200 h-full flex flex-col">
+            <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">${project.title}</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4 flex-grow">
+              ${project.description}
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              ${project.technologies.map(tech => `
+                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">
+                  ${tech}
+                </span>
+              `).join('')}
+            </div>
+            <div class="flex gap-4">
+              ${project.liveUrl ? `
+                <a href="${project.liveUrl}" 
+                   class="text-blue-600 dark:text-blue-400 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 rounded px-1" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                  View Project →
+                </a>
+              ` : ''}
+              ${project.repoUrl ? `
+                <a href="${project.repoUrl}" 
+                   class="text-blue-600 dark:text-blue-400 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 rounded px-1" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                  Source Code →
+                </a>
+              ` : ''}
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Initialize theme and navigation on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      // Render project cards first
+      renderProjects();
+      
+      // Initialize theme before page render to prevent flash
+      ThemeManager.init();
+      
+      // Add event listener to theme toggle button
+      const themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          ThemeManager.toggleTheme();
+        });
+      }
+
+      // Initialize navigation
+      NavigationManager.setActiveLink();
+      NavigationManager.initMobileMenu();
+
+      // Initialize smooth scrolling for anchor links
+      const anchorLinks = document.querySelectorAll('a[href^="#"]');
+      anchorLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href');
+          
+          // Skip if it's just "#" or empty
+          if (!href || href === '#') {
+            return;
+          }
+          
+          e.preventDefault();
+          
+          const targetId = href.substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            const targetY = targetElement.offsetTop;
+            ScrollHandler.smoothScrollTo(targetY, 800);
+          } else {
+            console.warn(`Scroll target not found: ${href}`);
+          }
+        });
+      });
+
+      // Set up manual scroll cancellation
+      let isManualScroll = false;
+      let scrollTimeout = null;
+
+      window.addEventListener('wheel', () => {
+        if (ScrollHandler.isScrolling) {
+          ScrollHandler.cancelScroll();
+        }
+      }, { passive: true });
+
+      window.addEventListener('touchmove', () => {
+        if (ScrollHandler.isScrolling) {
+          ScrollHandler.cancelScroll();
+        }
+      }, { passive: true });
+
+      window.addEventListener('keydown', (e) => {
+        // Cancel scroll on arrow keys, page up/down, space, home, end
+        const scrollKeys = ['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Space', 'Home', 'End'];
+        if (scrollKeys.includes(e.code) && ScrollHandler.isScrolling) {
+          ScrollHandler.cancelScroll();
+        }
+      });
+      
+      // Initialize animations for project cards
+      AnimationController.init('.project-card');
+    });
+  </script>
+</body>
+</html>
