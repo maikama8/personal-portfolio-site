@@ -54,7 +54,7 @@ portfolio-site/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/personal-portfolio-site.git
+git clone https://github.com/maikama8/personal-portfolio-site.git
 cd personal-portfolio-site
 ```
 
